@@ -230,7 +230,7 @@ namespace dyn{
       }
 
       /*
-       * true iif x is one of the partial sums  0, I_0, I_0+I_1, ...
+       * true iff x is one of the partial sums  0, I_0, I_0+I_1, ...
        */
       bool contains(uint64_t x){
 
@@ -370,7 +370,7 @@ namespace dyn{
       }
 
 
-   private:
+      //public:
 
       class node{
 
@@ -1250,12 +1250,11 @@ namespace dyn{
 		  }
 
 
-		  
 		  delete xy;
 		  //y has been merged into x, so needs to be de-allocated.
 		  delete y;
 
-
+		  
 	       }
 	    } //end if not x->can_lose()
 
@@ -1364,6 +1363,10 @@ namespace dyn{
 			   x->insert( x->size() , y->at( ii ) );
 			}
 		     }
+
+		     //free y's memory
+		     delete y;
+		     
 		     //update parent (i.e. this)
 		     --(this -> nr_children);
 		     

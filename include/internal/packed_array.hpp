@@ -434,6 +434,10 @@ namespace dyn{
 
       }
 
+      void remove(uint64_t i) {
+	 
+      }
+
       void insert(uint64_t i, uint64_t x){
 
 	 if(bitsize(x)>width_){
